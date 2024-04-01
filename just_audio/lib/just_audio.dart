@@ -867,7 +867,7 @@ class AudioPlayer {
     } on PlatformException catch (e) {
       try {
         // cant connect to servers
-        if (e.code == "-1004" && source is LockCachingAudioSource) {
+        if (e.code == "-1004") {
           // proxy is offline
           try {
             await _proxy._server.close(force: true);
